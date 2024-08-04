@@ -1,4 +1,4 @@
-# Diwali_Sales_Analysis
+# Sales_Analysis
 Project learning:- performed data cleaning and manipulation.
 Performed EDA(exploratory data analysis using pandas, matplotlib and seaborn libraries.
 Improved customer experience by identifying potential customers across different states,occupations,gender and age groups.
