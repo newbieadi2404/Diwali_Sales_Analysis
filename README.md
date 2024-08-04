@@ -55,7 +55,7 @@ df[['Age', 'Orders', 'Amount']].describe()
 ```ruby
 sales_state = df.groupby(['State'], as_index=False)['Amount'].sum().sort_values(by='Amount', ascending=False).head(10)
 ```
-- Most buyers from different age groups
+- Calculate most buyers from different age groups
 ```ruby
 sales_age = df.groupby(['Age Group'], as_index=False)['Amount'].sum().sort_values(by='Amount', ascending=False)
 ```
