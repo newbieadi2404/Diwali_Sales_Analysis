@@ -5,7 +5,6 @@ The goal of this project is to improve customer experience by analyzing sales da
 - `Data Cleaning`: Clean and preprocess the sales data to remove any inconsistencies or missing values.
 - `Data Analysis`: Analyze the sales data to identify trends, patterns, and correlations.
 - `Visualization`: Visualize the sales data to gain insights and make informed decisions.
-- `Recommendations`: Provide recommendations to improve customer experience and increase sales revenue.
 ## Pre-requisites
 - Python: Python 3.x installed on your system.
 - Pandas: `Pandas` library installed (pip install pandas).
