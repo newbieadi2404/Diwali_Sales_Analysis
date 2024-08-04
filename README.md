@@ -21,6 +21,6 @@ The goal of this project is to improve customer experience by analyzing sales da
 - Provide Recommendations: Provide recommendations to improve customer experience and increase sales revenue.
 ## Code Explanation
 ### Import Libraries
-```import pandas as pd```
- import numpy as np
+import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
