@@ -27,46 +27,46 @@ The goal of this project is to improve customer experience by analyzing sales da
 ```
 ### Load Data (from CSV file)
 ```ruby
-sales_data = pd.read_csv('sales_data.csv')
+df = pd.read_csv('Diwali Sales Data.csv', encoding= 'unicode_escape')
 ```
 ### Clean Data
-- Remove missing values
+- Drop unnecessary data(blank columns)
   ```ruby
-  sales_data.dropna(inplace=True)
+  df.drop(['Status', 'unnamed1'], axis=1, inplace=True)
   ```
-- Remove duplicates
+  - Check for null values
+  ```ruby
+  pd.isnull(df).sum()
+  ```
+- Drop null values
 ```ruby
-sales_data.drop_duplicates(inplace=True)
+df.dropna(inplace=True)
+```
+- Change data type
+```ruby
+df['Amount'] = df['Amount'].astype('int')
 ```
 ### Analyze Data
-- Calculate total sales
+- Calculate highest and the lowest numbers using the following(Age,	Orders,	Amount) using `describe` function 
 ```ruby
-total_sales = sales_data['sales'].sum()
+df[['Age', 'Orders', 'Amount']].describe()
 ```
-
-- Calculate average sales
+- Calculate total amount/sales from top 10 states
 ```ruby
-average_sales = sales_data['sales'].mean()
+sales_state = df.groupby(['State'], as_index=False)['Amount'].sum().sort_values(by='Amount', ascending=False).head(10)
 ```
-
-- Identify top-selling products
+- Most buyers from different age groups
 ```ruby
-top_products = sales_data.groupby('product')['sales'].sum().sort_values(ascending=False).head(5)
+sales_age = df.groupby(['Age Group'], as_index=False)['Amount'].sum().sort_values(by='Amount', ascending=False)
 ```
 ### Visualize Data
-- Plot total sales over time
+- Plot major gender purchasing power
 ```ruby
-plt.plot(sales_data['date'], sales_data['sales'])
-plt.xlabel('Date')
-plt.ylabel('Sales')
-plt.title('Total Sales Over Time')
-plt.show()
+sns.barplot(data = sales_state, x = 'Marital_Status',y= 'Amount', hue='Gender')
+<Axes: xlabel='Marital_Status', ylabel='Amount'>
 ```
-- Plot top-selling products
+- Plot major occupations
 ```ruby
-plt.bar(top_products.index, top_products.values)
-plt.xlabel('Product')
-plt.ylabel('Sales')
-plt.title('Top-Selling Products')
-plt.show()
+sns.barplot(data = sales_state, x = 'Occupation',y= 'Amount', hue='Occupation')
+<Axes: xlabel='Occupation', ylabel='Amount'>
 ```
