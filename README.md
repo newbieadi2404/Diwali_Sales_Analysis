@@ -22,7 +22,7 @@ The goal of this project is to improve customer experience by analyzing sales da
 ## Code Explanation
 ### Import Libraries
 ```ruby
-import pandas as pd
+'import' pandas 'as' pd
 import numpy as np
 import matplotlib.pyplot as plt
 
