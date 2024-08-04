@@ -27,8 +27,47 @@ The goal of this project is to improve customer experience by analyzing sales da
 'import' matplotlib.pyplot 'as' plt
 ```
 ### Load Data (from CSV file)
+```ruby
+sales_data = pd.read_csv('sales_data.csv')
 ```
-sales_data = pd.read_csv ```ruby('sales_data.csv')```
+### Clean Data
+- Remove missing values
+  ```ruby
+  sales_data.dropna(inplace=True)
+  ```
+- Remove duplicates
+```ruby
+sales_data.drop_duplicates(inplace=True)
+```
+### Analyze Data
+- Calculate total sales
+```ruby
+total_sales = sales_data['sales'].sum()
 ```
 
+- Calculate average sales
+```ruby
+average_sales = sales_data['sales'].mean()
+```
 
+- Identify top-selling products
+```ruby
+top_products = sales_data.groupby('product')['sales'].sum().sort_values(ascending=False).head(5)
+```
+### Visualize Data
+- Plot total sales over time
+```ruby
+plt.plot(sales_data['date'], sales_data['sales'])
+plt.xlabel('Date')
+plt.ylabel('Sales')
+plt.title('Total Sales Over Time')
+plt.show()
+```
+- Plot top-selling products
+```ruby
+plt.bar(top_products.index, top_products.values)
+plt.xlabel('Product')
+plt.ylabel('Sales')
+plt.title('Top-Selling Products')
+plt.show()
+```
