@@ -26,3 +26,6 @@ The goal of this project is to improve customer experience by analyzing sales da
 'import' numpy 'as' np
 'import' matplotlib.pyplot 'as' plt
 ```
+### Load Data
+#Load sales data from CSV file
+
