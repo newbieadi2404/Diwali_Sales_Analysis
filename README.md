@@ -27,4 +27,8 @@ The goal of this project is to improve customer experience by analyzing sales da
 'import' matplotlib.pyplot 'as' plt
 ```
 ### Load Data (from CSV file)
+```ruby
+sales_data = pd.read_csv'('sales_data.csv')'
+```
+
 
