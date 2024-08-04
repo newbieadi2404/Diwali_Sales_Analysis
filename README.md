@@ -1,7 +1,7 @@
 # Sales_Analysis
-#Overview
+# Overview
 The goal of this project is to improve customer experience by analyzing sales data to increase sales revenue. We will use Python and its popular libraries such as Pandas, NumPy, and Matplotlib to analyze the sales data and gain insights.
-#Features
+# Features
 Data Cleaning: Clean and preprocess the sales data to remove any inconsistencies or missing values.
 Data Analysis: Analyze the sales data to identify trends, patterns, and correlations.
 Visualization: Visualize the sales data to gain insights and make informed decisions.
